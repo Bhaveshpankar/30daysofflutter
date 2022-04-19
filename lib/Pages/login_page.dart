@@ -4,20 +4,20 @@ import "package:flutter/material.dart";
 import 'package:flutter_application_1/utility/routes.dart';
 import 'package:form_field_validator/form_field_validator.dart';
 
-class loginPage extends StatefulWidget {
-  const loginPage({Key? key}) : super(key: key);
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
+
   @override
-  // State<loginPage> createState() => _loginPageState();
-  _loginPageState createState() {
-    return _loginPageState();
-  }
+  State<LoginPage> createState() => _LoginPageState();
 }
 
-class _loginPageState extends State<loginPage> {
+class _LoginPageState extends State<LoginPage> {
   String name = "";
+
   bool changeButton = false;
 
   final _formkey = GlobalKey<FormState>();
+
   @override
   movetohome(BuildContext context) async {
     if (_formkey.currentState?.validate() ?? false) {
@@ -74,8 +74,9 @@ class _loginPageState extends State<loginPage> {
                         return null;
                       },
                       onChanged: (value) {
-                        name = value;
-                        setState(() {});
+                        setState(() {
+                          name = value;
+                        });
                       },
                     ),
                     TextFormField(
@@ -87,7 +88,7 @@ class _loginPageState extends State<loginPage> {
                       validator: (value) {
                         if (value == null || value.isEmpty) {
                           return "password cannot be empty";
-                        } else if (value!.length < 6) {
+                        } else if (value.length < 6) {
                           return "password lenght should be at least 6";
                         }
                         return null;

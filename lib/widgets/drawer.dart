@@ -12,61 +12,59 @@ class Mydrawer extends StatelessWidget {
         "https://cdn.pixabay.com/photo/2018/04/12/04/26/letter-b-3312512_960_720.jpg";
     return Drawer(
       child: Container(
-        color:Colors.black,
+        color: Colors.white,
         child: ListView(
           padding: EdgeInsets.zero,
           children: [
             DrawerHeader(
-              padding: EdgeInsets.zero,
-              child: UserAccountsDrawerHeader(
+                padding: EdgeInsets.zero,
+                child: UserAccountsDrawerHeader(
                   margin: EdgeInsets.zero,
                   accountName: Text("Bhavesh Pankar"),
                   accountEmail: Text("bhaveshpankar09@gmail.com"),
                   currentAccountPicture: CircleAvatar(
                     backgroundImage: NetworkImage(imageUrl),
                   ),
-                )
+                )),
+            ListTile(
+              leading: Icon(
+                CupertinoIcons.home,
+                color: Colors.black,
               ),
-              ListTile(
-                leading: Icon(
-                  CupertinoIcons.home,
-                  color: Colors.white,
-                ),
-                title: Text(
-                  "Home",
-                  textScaleFactor: 1.2,
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
+              title: Text(
+                "Home",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: Colors.black,
                 ),
               ),
-              ListTile(
-                leading: Icon(
-                  CupertinoIcons.profile_circled,
-                  color: Colors.white,
-                ),
-                title: Text(
-                  "Profile",
-                  textScaleFactor: 1.2,
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
+            ),
+            ListTile(
+              leading: Icon(
+                CupertinoIcons.profile_circled,
+                color: Colors.black,
+              ),
+              title: Text(
+                "Profile",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: Colors.black,
                 ),
               ),
-              ListTile(
-                leading: Icon(
-                  CupertinoIcons.mail,
-                  color: Colors.white,
+            ),
+            ListTile(
+              leading: Icon(
+                CupertinoIcons.mail,
+                color: Colors.black,
+              ),
+              title: Text(
+                "Email Me",
+                textScaleFactor: 1.2,
+                style: TextStyle(
+                  color: Colors.black,
                 ),
-                title: Text(
-                  "Email Me" ,
-                  textScaleFactor: 1.2,
-                  style: TextStyle(
-                    color: Colors.white,
-                  ),
-                ),
-              )
-          
+              ),
+            )
           ],
         ),
       ),
