@@ -1,4 +1,3 @@
-// ignore_for_file: use_key_in_widget_constructors, camel_case_types, prefer_const_constructors, duplicate_ignore, avoid_print, unused_import, override_on_non_overriding_member
 
 import "package:flutter/material.dart";
 import 'package:flutter_application_1/utility/routes.dart';

@@ -6,15 +6,17 @@ import 'package:flutter/material.dart';
 class Mydrawer extends StatelessWidget {
   const Mydrawer({Key? key}) : super(key: key);
 
+  static const imageUrl =
+      "https://cdn.pixabay.com/photo/2018/04/12/04/26/letter-b-3312512_960_720.jpg";
+
   @override
   Widget build(BuildContext context) {
-    final imageUrl =
-        "https://cdn.pixabay.com/photo/2018/04/12/04/26/letter-b-3312512_960_720.jpg";
     return Drawer(
       child: Container(
         color: Colors.white,
         child: ListView(
           padding: EdgeInsets.zero,
+          // ignore: prefer_const_literals_to_create_immutables
           children: [
             DrawerHeader(
                 padding: EdgeInsets.zero,
