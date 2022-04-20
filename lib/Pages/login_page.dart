@@ -1,4 +1,6 @@
 
+// ignore_for_file: prefer_const_constructors, duplicate_ignore, unused_import, override_on_non_overriding_member
+
 import "package:flutter/material.dart";
 import 'package:flutter_application_1/utility/routes.dart';
 import 'package:form_field_validator/form_field_validator.dart';
@@ -48,11 +50,13 @@ class _LoginPageState extends State<LoginPage> {
               // ignore: prefer_const_constructors
               Text(
                 "Welcome $name",
+                // ignore: prefer_const_constructors
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
                 ),
               ),
+              // ignore: prefer_const_constructors
               SizedBox(
                 height: 2.0,
               ),
@@ -62,6 +66,7 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   children: [
                     TextFormField(
+                      // ignore: prefer_const_constructors
                       decoration: InputDecoration(
                         hintText: "Enter Username",
                         labelText: "Username",
@@ -80,6 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                     ),
                     TextFormField(
                       obscureText: true,
+                      // ignore: prefer_const_constructors
                       decoration: InputDecoration(
                         hintText: "Enter Password",
                         labelText: "Password",
@@ -96,6 +102,7 @@ class _LoginPageState extends State<LoginPage> {
                   ],
                 ),
               ),
+              // ignore: prefer_const_constructors
               SizedBox(
                 height: 40.0,
               ),
