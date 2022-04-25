@@ -49,7 +49,7 @@ class _HomePageState extends State<HomePage> {
             ? GridView.builder(
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
-                  mainAxisSpacing: 16,
+                  mainAxisSpacing: 20,
                   crossAxisSpacing: 16,
                 ),
                 itemBuilder: (context, index) {
@@ -61,21 +61,29 @@ class _HomePageState extends State<HomePage> {
                       child: GridTile(
                         header: Container(
                             child: Container(
-                              child: Text(item.name,
-                              style: TextStyle(color: Colors.white),)
-                            ),
-                              padding: const EdgeInsets.all(12),
+                                child: Text(
+                              item.name,
+                              style: TextStyle(color: Colors.white),
+                            )),
+                            padding: const EdgeInsets.all(7),
                             decoration: BoxDecoration(
                               color: Colors.deepPurple,
                             )),
                         child: Image.network(item.image),
-                        footer: Text(
-                          item.price.toString(),
-                        ),
+                        footer: Container(
+                            child: Container(
+                                child: Text(
+                              item.price.toString(),
+                              style: TextStyle(color: Colors.white),
+                            )),
+                            padding: const EdgeInsets.all(2),
+                            decoration: BoxDecoration(
+                              color: Colors.black,
+                            )),
                       ));
                 },
                 itemCount: CatalogModel.items?.length,
-                )
+              )
             : Center(
                 child: CircularProgressIndicator(),
               ),
