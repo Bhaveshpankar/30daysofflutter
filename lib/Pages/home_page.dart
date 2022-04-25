@@ -1,4 +1,4 @@
-// ignore_for_file: unused_import
+// ignore_for_file: unused_import, prefer_const_constructors
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -45,17 +45,40 @@ class _HomePageState extends State<HomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(20.0),
-        child: (CatalogModel.items!=null && CatalogModel.items!.isNotEmpty)?  ListView.builder(
-          itemCount: CatalogModel.items?.length,
-          itemBuilder: (context, index) =>
-            ItemWidget(
-              item: CatalogModel.items![index],
-            ),
-          
-        )
-        :Center(
-          child: CircularProgressIndicator(),
-       ),
+        child: (CatalogModel.items != null && CatalogModel.items!.isNotEmpty)
+            ? GridView.builder(
+                gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                  crossAxisCount: 2,
+                  mainAxisSpacing: 16,
+                  crossAxisSpacing: 16,
+                ),
+                itemBuilder: (context, index) {
+                  final item = CatalogModel.items![index];
+                  return Card(
+                      clipBehavior: Clip.antiAlias,
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(10)),
+                      child: GridTile(
+                        header: Container(
+                            child: Container(
+                              child: Text(item.name,
+                              style: TextStyle(color: Colors.white),)
+                            ),
+                              padding: const EdgeInsets.all(12),
+                            decoration: BoxDecoration(
+                              color: Colors.deepPurple,
+                            )),
+                        child: Image.network(item.image),
+                        footer: Text(
+                          item.price.toString(),
+                        ),
+                      ));
+                },
+                itemCount: CatalogModel.items?.length,
+                )
+            : Center(
+                child: CircularProgressIndicator(),
+              ),
       ),
       drawer: const Mydrawer(),
     );
