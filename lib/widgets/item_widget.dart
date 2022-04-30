@@ -14,7 +14,6 @@ class ItemWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Card(
-      shadowColor: Colors.blue,
       child: ListTile(
         onTap: () {
           print("${item.name} pressed");

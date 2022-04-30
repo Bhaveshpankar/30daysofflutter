@@ -6,6 +6,8 @@ import 'dart:convert';
 
 class CatalogModel {
   static List<Item>? items;
+
+  static var item;
 }
 
 class Item {
