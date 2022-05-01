@@ -1,13 +1,14 @@
 // ignore_for_file: unused_import, prefer_const_constructors
 //--no-sound-null-safety
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/Pages/cart_page.dart';
 import 'package:flutter_application_1/Pages/home_page.dart';
 import 'package:flutter_application_1/Pages/login_page.dart';
 import 'package:flutter_application_1/utility/routes.dart';
 import 'package:flutter_application_1/widgets/theme.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MyApp());
 }
 
 class MyApp extends StatelessWidget {
@@ -22,9 +23,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: MyRoutes.homeRoute,
       routes: {
-        "/": (context) => const LoginPage(),
+        "/": (context) =>  LoginPage(),
         MyRoutes.homeRoute: (context) => HomePage(),
-        MyRoutes.loginRoute: (context) => const LoginPage()
+        MyRoutes.loginRoute: (context) =>  LoginPage(),
+        MyRoutes.cartRoute: (context) =>  CartPage(),
+
       },
     );
   }

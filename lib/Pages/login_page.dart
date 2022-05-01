@@ -1,6 +1,3 @@
-
-// ignore_for_file: prefer_const_constructors, duplicate_ignore, unused_import, override_on_non_overriding_member
-
 import "package:flutter/material.dart";
 import 'package:flutter_application_1/utility/routes.dart';
 
@@ -19,7 +16,7 @@ class _LoginPageState extends State<LoginPage> {
   final _formkey = GlobalKey<FormState>();
 
   @override
-  movetohome(BuildContext context) async {
+  moveToHome(BuildContext context) async {
     if (_formkey.currentState?.validate() ?? false) {
       setState(() {
         changeButton = true;
@@ -46,18 +43,15 @@ class _LoginPageState extends State<LoginPage> {
                 fit: BoxFit.cover,
                 height: 200,
               ),
-              // ignore: prefer_const_constructors
               Text(
                 "Welcome $name",
-                // ignore: prefer_const_constructors
                 style: TextStyle(
                   fontSize: 28,
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              // ignore: prefer_const_constructors
               SizedBox(
-                height: 2.0,
+                height: 20.0,
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(
@@ -65,7 +59,6 @@ class _LoginPageState extends State<LoginPage> {
                 child: Column(
                   children: [
                     TextFormField(
-                      // ignore: prefer_const_constructors
                       decoration: InputDecoration(
                         hintText: "Enter Username",
                         labelText: "Username",
@@ -77,14 +70,12 @@ class _LoginPageState extends State<LoginPage> {
                         return null;
                       },
                       onChanged: (value) {
-                        setState(() {
-                          name = value;
-                        });
+                        name = value;
+                        setState(() {});
                       },
                     ),
                     TextFormField(
                       obscureText: true,
-                      // ignore: prefer_const_constructors
                       decoration: InputDecoration(
                         hintText: "Enter Password",
                         labelText: "Password",
@@ -98,6 +89,7 @@ class _LoginPageState extends State<LoginPage> {
                         return null;
                       },
                     ),
+                    
                   ],
                 ),
               ),
@@ -109,7 +101,7 @@ class _LoginPageState extends State<LoginPage> {
                 color: Colors.deepPurple,
                 borderRadius: BorderRadius.circular(changeButton ? 50 : 8),
                 child: InkWell(
-                  onTap: () => movetohome(context),
+                  onTap: () => moveToHome(context),
                   child: AnimatedContainer(
                     duration: Duration(seconds: 1),
                     width: changeButton ? 50 : 150,
@@ -133,7 +125,6 @@ class _LoginPageState extends State<LoginPage> {
             ],
           ),
         ),
-      ),
-    );
+      ));
   }
 }

@@ -3,8 +3,10 @@
 
 import 'dart:convert';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:flutter_application_1/utility/routes.dart';
 import 'package:flutter_application_1/widgets/home_widgets/catalog_header.dart';
 import 'package:flutter_application_1/widgets/home_widgets/catalog_list.dart';
 
@@ -14,7 +16,7 @@ import 'package:flutter_application_1/models/catalog.dart';
 import 'package:flutter_application_1/widgets/item_widget.dart';
 import 'package:flutter_application_1/widgets/theme.dart';
 
-import '../widgets/drawer.dart';
+
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -35,7 +37,6 @@ class _HomePageState extends State<HomePage> {
   }
 
   loadData() async {
-    // await Future.delayed(Duration(seconds: 2));
     final catalogJson =
         await rootBundle.loadString("assets/files/catalog.json");
     final decodedData = jsonDecode(catalogJson);
@@ -50,6 +51,11 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: MyTheme.creamColor,
+        floatingActionButton: FloatingActionButton(
+          onPressed:() => Navigator.pushNamed(context, MyRoutes.cartRoute),
+          backgroundColor: MyTheme.darkBluishColor,
+        child:Icon(CupertinoIcons.cart),
+      ),
         body: SafeArea(
             child: Container(
                 padding: Vx.m32,
@@ -59,12 +65,14 @@ class _HomePageState extends State<HomePage> {
                     CatalogHeader(),
                     if (CatalogModel.items != null &&
                         CatalogModel.items!.isNotEmpty)
-                      CatalogList().py32().expand()
+                      CatalogList().py4().expand()
                     else
-                     CircularProgressIndicator().centered().py16().expand(),
+                     CircularProgressIndicator().centered().expand(),
                       
                   ],
-                ))));
+                ),
+              ),
+          ));
   }
 }
 
