@@ -1,13 +1,16 @@
-// ignore_for_file: unnecessary_null_comparison, prefer_typing_uninitialized_variables
+// ignore_for_file: unnecessary_null_comparison, prefer_typing_uninitialized_variables, null_closures
 
 import 'dart:convert';
-
-
 
 class CatalogModel {
   static List<Item>? items;
 
   static var item;
+
+  Item getById(int id) =>
+      items!.firstWhere((element) => element.id == id, orElse: null);
+
+  Item getByPosition(int pos) => items![pos];
 }
 
 class Item {
@@ -57,11 +60,9 @@ class Item {
   }
 
   factory Item.fromMap(Map<String, dynamic> map) {
-    
-
     return Item(
-      id:map['id'],
-      name:map['name'],
+      id: map['id'],
+      name: map['name'],
       desc: map['desc'],
       price: map['price'],
       color: map['color'],
