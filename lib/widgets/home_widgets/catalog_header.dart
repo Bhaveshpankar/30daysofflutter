@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_typing_uninitialized_variables
+// ignore_for_file: prefer_typing_uninitialized_variables, deprecated_member_use
 
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widgets/theme.dart';
@@ -14,7 +14,7 @@ class CatalogHeader extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        "Catalog App".text.xl4.bold.color(MyTheme.darkBluishColor).make(),
+        "Catalog App".text.xl4.bold.color(context.theme.accentColor).make(),
         "Trending products".text.xl2.make(),
       ],
     );

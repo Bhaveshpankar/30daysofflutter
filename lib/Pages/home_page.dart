@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first, unused_local_variable
+// ignore_for_file: public_member_api_docs, sort_constructors_first, unused_local_variable, deprecated_member_use
 // ignore_for_file: unused_import, prefer_const_constructors, import_of_legacy_library_into_null_safe
 
 import 'dart:convert';
@@ -50,11 +50,11 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: MyTheme.creamColor,
+        backgroundColor: context.canvasColor,
         floatingActionButton: FloatingActionButton(
           onPressed:() => Navigator.pushNamed(context, MyRoutes.cartRoute),
-          backgroundColor: MyTheme.darkBluishColor,
-        child:Icon(CupertinoIcons.cart),
+          backgroundColor: context.theme.buttonColor,
+        child:Icon(CupertinoIcons.cart,color: Colors.white,),
       ),
         body: SafeArea(
             child: Container(

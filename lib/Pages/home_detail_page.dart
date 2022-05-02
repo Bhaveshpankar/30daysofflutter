@@ -1,4 +1,4 @@
-// ignore_for_file: public_member_api_docs, sort_constructors_first, unnecessary_null_comparison, prefer_const_constructors
+// ignore_for_file: public_member_api_docs, sort_constructors_first, unnecessary_null_comparison, prefer_const_constructors, deprecated_member_use
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widgets/theme.dart';
 import 'package:velocity_x/velocity_x.dart';
@@ -15,8 +15,9 @@ class HomeDetailPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(backgroundColor: Colors.transparent),
+      backgroundColor: context.canvasColor,
       bottomNavigationBar: Container(
-          color: Colors.white,
+          color: context.cardColor,
           child: ButtonBar(
             alignment: MainAxisAlignment.spaceBetween,
             buttonPadding: EdgeInsets.zero,
@@ -26,10 +27,10 @@ class HomeDetailPage extends StatelessWidget {
                 onPressed: () {},
                 style: ButtonStyle(
                     backgroundColor:
-                        MaterialStateProperty.all(MyTheme.darkBluishColor),
+                        MaterialStateProperty.all(context.theme.buttonColor),
                     shape: MaterialStateProperty.all(StadiumBorder())),
                 child: "Add to cart".text.make(),
-              ).wh(140, 50),
+              ).wh(130, 50),
             ],
           ).p32()
       ),
@@ -47,12 +48,12 @@ class HomeDetailPage extends StatelessWidget {
               arcType: VxArcType.CONVEY,
               edge: VxEdge.TOP,
               child: Container(
-                color: Colors.white,
+                color: context.cardColor,
                 width: context.screenWidth,
                 child: Column(
                   children: [
-                    catalog.name.text.xl3
-                        .color(MyTheme.darkBluishColor)
+                    catalog.name.text.xl4
+                        .color(context.accentColor)
                         .bold
                         .make(),
                     catalog.desc.text
